@@ -10,6 +10,7 @@
 	outline-style: solid;
 	outline-width: 3px;
 	outline-color: #674e9b;
+	position: relative;
 }
 
 img {
@@ -18,9 +19,10 @@ img {
 
 h2 {
 	font-family: 'Press Start 2P', cursive;
-/*	position: relative;*/
-/*	left: 25%;
-	right: 25%;*/
+	position: absolute;
+	top: 20px;
+	left: 25%;
+	right: 25%;
 	color: midnightblue;
 	text-shadow:2px 2px 3px khaki;
 }

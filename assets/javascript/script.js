@@ -40,7 +40,7 @@ function saveUserInput() {
 
 	$("#train-name-input").val("");
 	$("#destination-input").val("");
-	$("#first-train-input").val("");
+	$("#first-train-time-input").val("");
 	$("#frequency-input").val("");
 }
 
@@ -56,36 +56,36 @@ $("#submit-button").on("click", function(event) {
 });
 
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-	console.log(childSnapshot.val());
+	// console.log(childSnapshot.val());
 
 	var trainName = childSnapshot.val().trainName;
 	var trainDestination = childSnapshot.val().destination;
 	var firstTrain = childSnapshot.val().firstTrain;
 	var trainFrequency = childSnapshot.val().frequency;
 
-	console.log(trainName);
-	console.log(trainDestination);
-	console.log(firstTrain);
-	console.log(trainFrequency);
+	// console.log(trainName);
+	// console.log(trainDestination);
+	// console.log(firstTrain);
+	// console.log(trainFrequency);
 
 	var firstTimeConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
-	console.log(firstTimeConverted);
+	// console.log(firstTimeConverted);
 
 	var currentTime = moment();
-	console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+	// console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
 	var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-	console.log("DIFFERENCE IN TIME: " + diffTime);
+	// console.log("DIFFERENCE IN TIME: " + diffTime);
 
 	var tRemainder = diffTime % trainFrequency;
-	console.log(tRemainder);
+	// console.log(tRemainder);
 
 	// Minute Until Train
 	var tMinutesTillTrain = trainFrequency - tRemainder;
-	console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+	// console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
 	var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+	// console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
 	// Add each train's data into the table
 	$("#train-schedule > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>Every " +
