@@ -10,19 +10,19 @@
 	outline-style: solid;
 	outline-width: 3px;
 	outline-color: #674e9b;
-	font-family: 'Press Start 2P', cursive;
 }
 
 img {
 	height: 350px;
 }
 
-.form-heading {
-	margin-bottom: 10px;
-}
-
-.form-group {
-	padding: 0px 10px 0px 10px;
+h2 {
+	font-family: 'Press Start 2P', cursive;
+/*	position: relative;*/
+/*	left: 25%;
+	right: 25%;*/
+	color: midnightblue;
+	text-shadow:2px 2px 3px khaki;
 }
 
 /* For footer positioning and to get rid of weird L-R scroll bar */
